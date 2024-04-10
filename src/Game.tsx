@@ -155,7 +155,7 @@ const QuestionApi = ({ info }: { info: QuizQuestionApi }) => {
 }
 
 export const Game = () => {
-  const questions = useQuestionsStore((state) => state.questions) //recuperamos la question
+  //const questions = useQuestionsStore((state) => state.questions) //recuperamos la question
   const questionsApi = useQuestionsStore((state) => state.questionsApi)
   const currentQuestions = useQuestionsStore((state) => state.currentQuestions) //recuperamos la pregunta actual
   const goNextQuestion = useQuestionsStore((state) => state.goNextQuestion)
@@ -184,7 +184,7 @@ export const Game = () => {
         {currentQuestions + 1}/{questionsApi.length}
         <IconButton
           onClick={goNextQuestion}
-          disabled={currentQuestions >= questions.length - 1}
+          disabled={currentQuestions >= questionsApi.length - 1}
           //disabled={currentQuestions >= questionsApi.length - 1}
         >
           <ArrowForwardIos />
